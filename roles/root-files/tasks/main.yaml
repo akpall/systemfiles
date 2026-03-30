@@ -1,7 +1,7 @@
 ---
 - name: Copy fde.conf.j2 to /etc/dracut.conf.d/
   ansible.builtin.template:
-    src: ../root/etc/dracut.conf.d/fde.conf.j2
+    src: root/etc/dracut.conf.d/fde.conf.j2
     dest: /etc/dracut.conf.d/
     owner: root
     group: root
@@ -9,7 +9,7 @@
 
 - name: Copy akpall to /etc/portage/sets
   ansible.builtin.template:
-    src: ../root/etc/portage/sets/akpall
+    src: root/etc/portage/sets/akpall
     dest: /etc/portage/sets/
     owner: root
     group: root
@@ -17,7 +17,7 @@
 
 - name: Copy package.license to /etc/portage/
   ansible.builtin.template:
-    src: ../root/etc/portage/package.license
+    src: root/etc/portage/package.license
     dest: /etc/portage/
     owner: root
     group: root
@@ -25,7 +25,7 @@
 
 - name: Copy 01-global to /etc/portage/package.use/
   ansible.builtin.template:
-    src: ../root/etc/portage/package.use/01-global
+    src: root/etc/portage/package.use/01-global
     dest: /etc/portage/package.use/
     owner: root
     group: root
