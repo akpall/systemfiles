@@ -1,0 +1,6 @@
+---
+- name: Setup host
+  hosts: all
+  roles:
+    - ../roles/repositories
+    - ../roles/root-files

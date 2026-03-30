@@ -1,0 +1,20 @@
+---
+- name: Install eselect_repository
+  community.general.portage:
+    package: app-eselect/eselect-repository
+    state: present
+
+- name: Get installed repositories
+  ansible.builtin.shell:
+    cmd: eselect repository list -i 2>/dev/null | tail -n +2 | awk '{print $2}'
+  register: eselect_repository_list_installed
+
+- name: Overwrite eselect_repository_list_installed
+  ansible.builtin.set_fact:
+    eselect_repository_list_installed: "{{ eselect_repository_list_installed['stdout_lines'] }}"
+
+- name: Install repositories
+  loop: "{{ eselect_repository_list }}"
+  when: item not in eselect_repository_list_installed
+  ansible.builtin.command:
+    cmd: eselect repository enable {{ item }}

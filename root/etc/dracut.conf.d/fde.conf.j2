@@ -1,0 +1,7 @@
+install_items+=" /etc/keys/root.key "
+kernel_cmdline+=" rd.luks.key=/etc/keys/root.key:/ "
+
+{% if ansible_facts["fqdn"] == "fw13.lan" %}
+kernel_cmdline+=" root=UUID=2442f5a7-bba9-4752-9ae4-9df38e4a8a58 "
+kernel_cmdline+=" rd.luks.uuid=9f8b7007-4cc3-41d1-8323-076d253a3d8c "
+{% endif %}
