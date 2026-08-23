@@ -33,6 +33,7 @@ app-accessibility/at-spi2-core abi_x86_32
 app-arch/bzip2 abi_x86_32
 app-arch/xz-utils abi_x86_32
 app-arch/zstd abi_x86_32
+app-containers/container-libs extra
 app-crypt/p11-kit abi_x86_32
 app-crypt/pinentry qt6
 app-editors/emacs -X
@@ -53,8 +54,6 @@ app-emulation/virt-manager gui
 app-emulation/wine-vanilla opencl
 app-emulation/wine-vanilla wow64
 app-text/poppler cairo
-app-text/texlive cjk
-app-text/texlive context
 app-text/texlive extra
 app-text/texlive games
 app-text/texlive graphics
@@ -68,7 +67,6 @@ app-text/texlive music
 app-text/texlive pstricks
 app-text/texlive publishers
 app-text/texlive science
-app-text/texlive xetex
 app-text/xmlto text
 dev-lang/php curl
 dev-lang/php gd
@@ -102,8 +100,15 @@ dev-qt/qtgui egl
 dev-qt/qtmultimedia alsa
 dev-qt/qtmultimedia qml
 dev-qt/qtmultimedia widgets
+dev-qt/qtpositioning geoclue
+dev-util/ostree -dracut
+dev-util/ostree gpg
 dev-util/spirv-tools abi_x86_32
+games-util/mangohud mangoapp mangohudctl
 gnome-base/librsvg abi_x86_32
+kde-apps/kde-apps-meta -education -games -multimedia -accessibility -pim -sdk
+kde-apps/kdenetwork-meta -bittorrent -zeroconf -webengine
+kde-apps/kdeutils-meta 7zip gpg lrz rar -webengine
 llvm-core/llvm abi_x86_32
 media-gfx/graphite2 abi_x86_32
 media-libs/alsa-lib abi_x86_32
@@ -118,6 +123,7 @@ media-libs/gegl lcms
 media-libs/glu abi_x86_32
 media-libs/harfbuzz abi_x86_32
 media-libs/harfbuzz icu
+media-libs/imgui glfw
 media-libs/libcanberra alsa
 media-libs/libdisplay-info abi_x86_32
 media-libs/libepoxy abi_x86_32
@@ -148,6 +154,7 @@ media-video/pipewire sound-server
 net-dns/c-ares abi_x86_32
 net-dns/dnsmasq script
 net-dns/libidn2 abi_x86_32
+net-firewall/nftables json
 net-libs/gnutls abi_x86_32
 net-libs/gnutls pkcs11
 net-libs/gnutls tools
@@ -155,10 +162,17 @@ net-libs/libasyncns abi_x86_32
 net-libs/libpsl abi_x86_32
 net-libs/nghttp2 abi_x86_32
 net-libs/nghttp3 abi_x86_32
+net-libs/ngtcp2 abi_x86_32
 net-libs/ngtcp2 gnutls
 net-libs/nodejs npm
 net-mail/mu emacs
 net-misc/curl abi_x86_32
+net-misc/networkmanager -bluetooth
+net-misc/networkmanager -concheck
+net-misc/networkmanager -modemmanager
+net-misc/networkmanager -ppp
+net-misc/networkmanager -wext
+net-misc/networkmanager syslog
 net-misc/spice-gtk usbredir
 net-print/cups abi_x86_32
 sys-apps/attr static-libs
@@ -175,6 +189,7 @@ sys-apps/fwupd spi
 sys-apps/fwupd synaptics
 sys-apps/fwupd tpm
 sys-apps/fwupd uefi
+sys-apps/openrc -netifrc
 sys-apps/systemd-utils abi_x86_32
 sys-apps/util-linux abi_x86_32
 sys-libs/gdbm abi_x86_32
